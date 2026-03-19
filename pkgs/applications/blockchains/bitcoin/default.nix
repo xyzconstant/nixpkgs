@@ -151,6 +151,7 @@ stdenv.mkDerivation (finalAttrs: {
   cmakeFlags = [
     (lib.cmakeBool "BUILD_BENCH" false)
     (lib.cmakeBool "WITH_ZMQ" true)
+    (lib.cmakeBool "ENABLE_IPC" true)
     (lib.cmakeBool "WITH_USDT" enableTracing)
   ]
   ++ lib.optionals (!finalAttrs.doCheck) [
